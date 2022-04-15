@@ -3,7 +3,7 @@ import { IsNotEmpty, IsString } from 'class-validator';
 export class VaccinDto {
   @IsString()
   @IsNotEmpty()
-  question?: string;
+  title?: string;
 
   @IsString()
   @IsNotEmpty()

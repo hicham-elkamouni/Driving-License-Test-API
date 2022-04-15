@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { CreateQuestionDto } from './dto/createQuestion.input';
 import { Question, QuestionDocument } from './model/question.model';
 
 @Injectable()
@@ -14,10 +15,10 @@ export class QuestionService {
     return this.questionModel.find().exec();
   }
 
-  // async createCenter( createCenterDto: CreateCenterDto,): Promise<Center | object> {
-  //   const center = await this.centerModel.create(createCenterDto);
-  //   return center;
-  // }
+  async createQuestion( createQuestionDto: CreateQuestionDto,): Promise<Question | object> {
+    const question = await this.questionModel.create(createQuestionDto);
+    return question;
+  }
 
 //   async findCenterByCity(
 //     FindCenterDto: FindCenterDto,

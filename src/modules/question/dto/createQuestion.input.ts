@@ -1,9 +1,9 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class VaccinDto {
+export class CreateQuestionDto {
   @IsString()
   @IsNotEmpty()
-  question: string;
+  title: string;
 
   @IsString()
   @IsNotEmpty()

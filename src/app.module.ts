@@ -16,7 +16,6 @@ import { QuestionModule } from './modules/question/question.module';
     }),
     MongooseModule.forRoot(process.env.DATABASE_URI),
     QuestionModule
-    
   ],
   providers: [
     {
