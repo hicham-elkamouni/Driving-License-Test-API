@@ -15,15 +15,15 @@ export class QuestionService {
     return this.questionModel.find().exec();
   }
 
-  async createQuestion( createQuestionDto: CreateQuestionDto,): Promise<Question | object> {
+  async createQuestion( createQuestionDto: CreateQuestionDto): Promise<Question | object> {
     const question = await this.questionModel.create(createQuestionDto);
     return question;
   }
 
-//   async findCenterByCity(
-//     FindCenterDto: FindCenterDto,
-//   ): Promise<Center | object> {
-//     const center = await this.centerModel.find({ city: FindCenterDto.city });
-//     return center;
-//   }
+  // async deleteQuestion(
+  //   FindCenterDto: FindCenterDto,
+  // ): Promise<Center | object> {
+  //   const center = await this.centerModel.find({ city: FindCenterDto.city });
+  //   return center;
+  // }
 }
