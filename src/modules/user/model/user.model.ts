@@ -12,10 +12,13 @@ export class User {
   cin: string;
 
   @Prop({ required: true })
-  age: string;
+  age: number;
 
   @Prop({ required: true })
   address: string;
+
+  @Prop({ required: true })
+  totalScore: number;
 
 }
 

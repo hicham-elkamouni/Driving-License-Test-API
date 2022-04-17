@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class UserInputDto {
     @IsString()
@@ -7,13 +7,17 @@ export class UserInputDto {
 
     @IsString()
     @IsNotEmpty()
-    cin: string[];
+    cin: string;
 
-    @IsString()
+    @IsNumber()
     @IsNotEmpty()
-    age: string;
+    age: number;
 
     @IsString()
     @IsNotEmpty()
     address: string;
+
+    @IsNumber()
+    @IsNotEmpty()
+    totalScore: number;
 }
