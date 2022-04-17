@@ -20,10 +20,4 @@ export class QuestionService {
     return question;
   }
 
-  // async deleteQuestion(
-  //   FindCenterDto: FindCenterDto,
-  // ): Promise<Center | object> {
-  //   const center = await this.centerModel.find({ city: FindCenterDto.city });
-  //   return center;
-  // }
 }
