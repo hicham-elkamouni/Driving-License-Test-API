@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { QuestionModule } from './modules/question/question.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { QuestionModule } from './modules/question/question.module';
       limit: 100,
     }),
     MongooseModule.forRoot(process.env.DATABASE_URI),
-    QuestionModule
+    QuestionModule,
+    UserModule
   ],
   providers: [
     {

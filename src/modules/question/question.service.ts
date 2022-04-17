@@ -20,4 +20,9 @@ export class QuestionService {
     return question;
   }
 
+  async deleteQuestion(id: string): Promise<Question | object> {
+    const question = await this.questionModel.findByIdAndDelete(id);
+    return question;
+  }
+
 }
