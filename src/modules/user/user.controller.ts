@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserInputDto } from './dto/user.input';
 // import { FindCenterDto } from './dto/find-center.dto';
@@ -18,11 +18,21 @@ export class UserController {
   }
 
   @Post('create')
-  async createQuestion(@Body() createUserDto: UserInputDto) {
+  async createUser(@Body() createUserDto: UserInputDto) {
     try {
       return await this.userService.createUser(createUserDto);
     } catch (error) {
       return { error: error.message };
     }
   }
+
+  @Delete('delete/:id')
+  async deleteUser(@Param('id') id: string) {
+    try {
+      return await this.userService.deleteUser(id);
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
+  
 }

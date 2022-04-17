@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Delete } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { UserInputDto } from './dto/user.input';
@@ -17,6 +17,11 @@ export class UserService {
 
   async createUser( userInputDto: UserInputDto): Promise<User | object> {
     const user = await this.userModel.create(userInputDto);
+    return user;
+  }
+
+  async deleteUser(id: string): Promise<User | object> {
+    const user = await this.userModel.findByIdAndDelete(id);
     return user;
   }
 
