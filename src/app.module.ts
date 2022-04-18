@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { AdminModule } from './modules/admin/admin.module';
 import { QuestionModule } from './modules/question/question.module';
 import { UserModule } from './modules/user/user.module';
 
@@ -17,7 +18,8 @@ import { UserModule } from './modules/user/user.module';
     }),
     MongooseModule.forRoot(process.env.DATABASE_URI),
     QuestionModule,
-    UserModule
+    UserModule,
+    AdminModule
   ],
   providers: [
     {
