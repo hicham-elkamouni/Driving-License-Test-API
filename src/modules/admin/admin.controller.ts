@@ -2,7 +2,7 @@ import { Body, Controller, Get } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 
 @Controller('admin')
-export class QuestionController {
+export class AdminController {
   constructor(private readonly userService: UserService) {}
 
   
